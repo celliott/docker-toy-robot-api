@@ -2,7 +2,7 @@
 
 MODULE := toy_robot_api
 
-PORTS = -p 8000:8000
+PORTS = -p 80:5000
 #ENVS = -e MODULE=${MODULE}
 
 VOLUMES = -v `pwd`/app:/opt/django/app
