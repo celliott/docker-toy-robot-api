@@ -1,7 +1,7 @@
-docker-django
+docker-toy-robot-api
 ===
 
-A docker container for running a basic django app with gunicorn.
+A docker container for running a django toy-robot-api
 
 
 Quick Start
