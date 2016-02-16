@@ -1,17 +1,20 @@
-# docker-robot-api makefile
+# docker-toy-robot-api makefile
 
+ADMIN_USER=${ADMIN_USER:-'admin'}
+ADMIN_PASS=${ADMIN_PASS:-'Password123'}
+ADMIN_EMAIL=${ADMIN_EMAIL:-'admin@petals.io'}
 MODULE := toy_robot_api
 
 PORTS = -p 80:5000
-#ENVS = -e MODULE=${MODULE}
+ENVS = -e ADMIN_USER=${ADMIN_USER} -e ADMIN_PASS=${ADMIN_PASS} -e ADMIN_EMAIL=${ADMIN_EMAIL} -e MODULE=${MODULE}
 
-VOLUMES = -v `pwd`/app:/opt/django/app
+VOLUMES = -v `pwd`/app:/opt/app
 CONTAINER = toy-robot-api
 
 .PHONY: container run
 
 clean :
-	rm -rf build
+	rm -rf app/db.sqlite3
 
 container :
 	docker build -t $(CONTAINER) .
