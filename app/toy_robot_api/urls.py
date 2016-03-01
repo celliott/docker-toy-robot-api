@@ -28,6 +28,10 @@ class UserViewSet(viewsets.ModelViewSet):
 class RobotViewSet(viewsets.ModelViewSet):
     queryset = Robot.objects.all()
     serializer_class = RobotSerializer
+ 
+# class RobotDetailViewSet(viewsets.ModelViewSet, robot_name):
+#     queryset = Robot.objects.filter(name=robot_name)
+#     serializer_class = RobotSerializer
 
 # class PositionViewSet(viewsets.ModelViewSet):
 #     queryset = Position.objects.all()
@@ -36,12 +40,14 @@ class RobotViewSet(viewsets.ModelViewSet):
 # Routers provide a way of automatically determining the URL conf.
 router = routers.DefaultRouter()
 router.register(r'users', UserViewSet)
-router.register(r'robots', RobotViewSet)
+router.register(r'robot/list', RobotViewSet)
+router.register(r'robot', RobotViewSet)
 #router.register(r'postitions', PositionViewSet)
 
 # Wire up our API using automatic URL routing.
 # Additionally, we include login URLs for the browsable API.
 urlpatterns = [
     url(r'^', include(router.urls)),
+    #url(r'^robot/(?P<robot_name>\w+)'),
     url(r'^api-auth/', include('rest_framework.urls', namespace='rest_framework'))
 ]

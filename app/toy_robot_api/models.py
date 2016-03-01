@@ -1,7 +1,8 @@
 from django.db import models
 
 class Robot(models.Model):
-    name = models.CharField(max_length=30)
+	name = models.CharField(max_length=30)
+#	table = models.CharField(max_length=30)
 
 # class Position(models.Model):
 #     robot = models.ForeignKey(Robot, on_delete=models.CASCADE)

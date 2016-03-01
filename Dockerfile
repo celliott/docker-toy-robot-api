@@ -24,5 +24,5 @@ ADD ./supervisord.conf /etc/supervisor/conf.d/supervisord.conf
 ADD ./start.sh /start.sh
 
 #CMD ["/usr/bin/supervisord"]
-#CMD bin/bash -l
-CMD /start.sh
+CMD bin/bash -l
+#CMD /start.sh

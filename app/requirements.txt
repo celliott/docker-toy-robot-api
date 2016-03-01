@@ -15,3 +15,4 @@ psycopg2
 python-memcached
 six>=1.1.0
 uuid
+flask
