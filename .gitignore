@@ -3,3 +3,6 @@
 
 # sqlite3 db
 *.sqlite3
+
+# error output
+output.html
